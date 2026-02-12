@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}إنشاء تقرير جديد{% endblock %}
+
+{% block content %}
+<div class="mb-8 border-b pb-4">
+    <h2 class="text-2xl font-bold text-gray-800">إنشاء تقرير إجازة مرضية</h2>
+    <p class="text-gray-600 mt-1">يرجى تعبئة البيانات التالية بدقة لتوليد التقرير.</p>
+</div>
+
+<form method="post" action="/generate" class="space-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- رمز الإجازة -->
+        <div class="col-span-1 md:col-span-2">
+            <label class="block text-sm font-medium text-gray-700 mb-1">رمز الإجازة</label>
+            <input type="text" name="leave_id" required 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+        </div>
+
+        <!-- الاسم -->
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">الاسم الكامل</label>
+            <input type="text" name="name" required 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+        </div>
+
+        <!-- رقم الهوية -->
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">رقم الهوية / الإقامة</label>
+            <input type="text" name="national_id" required 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+        </div>
+
+        <!-- الجنسية -->
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">الجنسية</label>
+            <input type="text" name="nationality" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+        </div>
+
+        <!-- جهة العمل -->
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">جهة العمل</label>
+            <input type="text" name="employer" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+        </div>
+
+        <!-- اسم الممارس -->
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">اسم الممارس الصحي</label>
+            <input type="text" name="practitioner" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+        </div>
+
+        <!-- المسمى الوظيفي -->
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">المسمى الوظيفي</label>
+            <input type="text" name="position" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+        </div>
+
+        <!-- تاريخ الدخول -->
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">تاريخ الدخول</label>
+            <input type="date" name="admission_date" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-right">
+        </div>
+
+        <!-- تاريخ الخروج -->
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">تاريخ الخروج</label>
+            <input type="date" name="discharge_date" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-right">
+        </div>
+    </div>
+
+    <div class="pt-4">
+        <button type="submit" 
+            class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform transition hover:-translate-y-0.5 active:translate-y-0">
+            توليد التقرير PDF
+        </button>
+    </div>
+</form>
+{% endblock %}
