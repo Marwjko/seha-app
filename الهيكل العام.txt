@@ -1,0 +1,25 @@
+site/
+├── main.py
+├── db.py
+├── auth.py
+├── pdf_engine.py
+├── utils_ar.py
+├── config.py
+├── requirements.txt
+│
+├── storage/
+│   └── template.pdf
+│
+├── fonts/
+│   └── NotoSansArabic-Thin.ttf
+│
+├── templates/
+│   ├── base.html
+│   ├── login.html
+│   ├── dashboard.html
+│   ├── admin.html
+│
+└── static/
+    └── style.css
+
+
